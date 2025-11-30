@@ -1,21 +1,23 @@
-#
-# Copiar ficheros de configuración de apache2 que incluyen:
-#
-# - apache2.conf,
-# - apolo.olimpo.test.conf
-# - atenea.olimpo.test.conf
-#
+#!/bin/bash
 
-# tu código aquí
+echo "==> Copiando configuraciones de Apache..."
 
-#
-# Habilitar los servidores virtuales
-#
+cp -v /vagrant/files/mercurio.olimpo.test/apache2.conf /etc/apache2/apache2.conf 2>/dev/null
 
-# tu código aquí
+cp -v /vagrant/files/mercurio.olimpo.test/apolo.olimpo.test.conf  /etc/apache2/sites-available/
+cp -v /vagrant/files/mercurio.olimpo.test/atenea.olimpo.test.conf /etc/apache2/sites-available/
 
-#
-# Reiniciar el servicio
-#
+echo "==> Habilitando sitios virtuales..."
 
-# tu código aquí
+a2ensite apolo.olimpo.test.conf
+a2ensite atenea.olimpo.test.conf
+
+echo "==> Deshabilitando sitio por defecto..."
+a2dissite 000-default.conf
+
+echo "==> Comprobando sintaxis de Apache..."
+apachectl configtest
+
+echo "==> Reiniciando Apache..."
+systemctl restart apache2
+systemctl enable apache2
