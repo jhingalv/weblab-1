@@ -1,7 +1,3 @@
-# named.conf.options
-#
-# Fernando Raya <fraya@ieszaidinvergeles.org>
-
 acl trusted {
     127.0.0.0/8;
     192.168.57.0/24;

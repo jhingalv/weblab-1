@@ -1,8 +1,6 @@
 ; olimpo.test.dns
 ;
-; Fernando Raya <fraya@ieszaidinvergeles.org>
-;
-; olimpo.test domain direct zone
+; Direct zone
 
 $ORIGIN olimpo.test.
 $TTL 86400

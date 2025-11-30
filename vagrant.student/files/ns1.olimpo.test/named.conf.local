@@ -1,7 +1,3 @@
-# named.conf.local
-#
-# Fernando Raya <fraya@ieszaidinvergeles.org>
-
 zone "olimpo.test" {
      type master;
      file "/var/lib/bind/olimpo.test.dns";

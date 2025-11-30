@@ -1,7 +1,5 @@
 ; 192.168.57.dns
 ;
-; Fernando Raya <fraya@ieszaidinvergeles.org>
-;
 ; Reverse zone
 
 $ORIGIN 57.168.192.in-addr.arpa.
